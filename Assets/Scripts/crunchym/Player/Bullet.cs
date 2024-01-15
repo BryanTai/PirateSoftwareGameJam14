@@ -9,14 +9,23 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject impactEffect;
 
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
-        //We are telling "RB" to move times its speed
         rb.velocity = transform.right * speed;
     }
 
-    //this is our when it collieds
-    //void OnTriggerEnter2D (Collider2D hitInfo){}
-        
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
+
+        Instantiate(impactEffect, transform.position, transform.rotation);
+
+        Destroy(gameObject);
+    }
+
 }
