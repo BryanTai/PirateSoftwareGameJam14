@@ -6,17 +6,15 @@ public class PlayerMovement : MonoBehaviour {
 
     //use to refrance the CharCtrl2D script
     public CharacterController2D controller;
-
     //controls our speed of Char
     public float runSpeed = 60f;
-
     //"FLOAT" just lest use use decimal numbers
     //We are going to get our player input data from "VoidUpdate" and then use the "Void FixedUpdate" to apply the input to our CHAR 
     float horizontalMove = 0f;
 
     //bool can only be true of false switch
-    bool jump = false;
-    bool crouch = false;
+    private bool jump = false;
+    private bool crouch = false;
 
 
     // "Void Update" is called once per frame
@@ -37,7 +35,8 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
-        }else if (Input.GetButtonUp("Crouch"))
+        }
+        else if (Input.GetButtonUp("Crouch"))
         {
             crouch = false;
         }

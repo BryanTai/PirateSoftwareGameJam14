@@ -8,11 +8,11 @@ public class Bullet : MonoBehaviour
     public int damage = 40;
     public Rigidbody2D rb;
     public GameObject impactEffect;
-
+    
     // Use this for initialization
     void Start()
     {
-        rb.velocity = transform.right * speed;
+        rb.velocity = transform.right * speed;   
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
@@ -24,8 +24,8 @@ public class Bullet : MonoBehaviour
         }
 
         Instantiate(impactEffect, transform.position, transform.rotation);
-
         Destroy(gameObject);
+        
     }
 
 }
