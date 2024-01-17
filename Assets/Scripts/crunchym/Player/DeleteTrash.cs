@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHitPoint : MonoBehaviour
+public class DeleteTrash : MonoBehaviour
 {
-    public int health = 100;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +13,6 @@ public class PlayerHitPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Destroy(gameObject, 5f);
     }
 }

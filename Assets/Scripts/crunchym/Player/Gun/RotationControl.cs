@@ -15,30 +15,43 @@ public class RotationControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.W))
         {
-            transform.Rotate(Vector3.forward, 90);
+            transform.localEulerAngles = new Vector3(0, 0, 90);
         }
+
         if (Input.GetKeyUp(KeyCode.W))
         {
             transform.localEulerAngles = new Vector3(0, 0, 0);
-            //transform.Rotate(Vector3.forward, 90);
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            transform.Rotate(Vector3.forward, -90);
+            transform.localEulerAngles = new Vector3(0, 0, -90);
         }
 
         if (Input.GetKeyUp(KeyCode.S))
         {
             transform.localEulerAngles = new Vector3(0, 0, 0);
-            //    transform.Rotate(Vector3.forward, -90);
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && Input.GetButton("Horizontal"))
+        if (Input.GetKey(KeyCode.W) && Input.GetButtonDown("Horizontal"))
         {
             transform.localEulerAngles = new Vector3(0, 0, 45);
+        }
+        if (Input.GetButton("Horizontal") && Input.GetKeyDown(KeyCode.W))
+        {
+            transform.localEulerAngles = new Vector3(0, 0, 45);
+        }
+
+        if (Input.GetKey(KeyCode.S) && Input.GetButtonDown("Horizontal"))
+        {
+            transform.localEulerAngles = new Vector3(0, 0, -45);
+        }
+        if (Input.GetButton("Horizontal") && Input.GetKeyDown(KeyCode.S))
+        {
+            transform.localEulerAngles = new Vector3(0, 0, -45);
         }
 
     }
