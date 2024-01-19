@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 7089205719868711534}
   - component: {fileID: 4657380977770651542}
   - component: {fileID: 2772744378933964961}
+  - component: {fileID: 8655912841834836592}
   m_Layer: 0
   m_Name: catgirl
   m_TagString: Untagged
@@ -266,3 +267,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.01
   enemyjumppower: 100
+--- !u!114 &8655912841834836592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8521331942011210971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a73493726cb6a4782826920469c477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
