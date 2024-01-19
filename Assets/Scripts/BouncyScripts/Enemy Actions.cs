@@ -28,6 +28,15 @@ public class Actions : MonoBehaviour
 
 
     }
+    //When enemy collides with player, player will take damage
+    void OnTriggerEnter2D(Collider2D enemycollision)
+    {
+        if (enemycollision.gameObject.name == "Player")
+        {
+            Debug.Log("TAKE THAT");
+            //Player.GetComponent<Rigidbody2D>().AddForce(enemyjump);
+        }
 
-    
+    }
+
 }
