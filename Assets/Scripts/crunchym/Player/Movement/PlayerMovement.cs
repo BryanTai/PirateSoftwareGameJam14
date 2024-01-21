@@ -55,7 +55,8 @@ public class PlayerMovement : MonoBehaviour {
     {
         if (collision.tag == "Win")
         {
-            WINTEXT.gameObject.SetActive(true);
+            //TODO: Implement this!
+            //WINTEXT.gameObject.SetActive(true);
         }
     }
 }

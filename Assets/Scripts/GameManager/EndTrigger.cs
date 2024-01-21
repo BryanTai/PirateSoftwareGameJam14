@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndTrigger : MonoBehaviour
 {
@@ -8,10 +9,11 @@ public class EndTrigger : MonoBehaviour
     {
        if(collission.tag == "Player")
         {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
         //FindObjectOfType<GameManager>().CompleteLevel();
         //gameManager.CompleteLevel();
         }
+    }
 
 
 
