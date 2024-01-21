@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour {
     private bool crouch = false;
 
 
+
     // "Void Update" is called once per frame
 
     //the text "Jump, Crouch, and Horizontal" are coming from the "Input Manager" in the Project Settings
@@ -49,5 +50,12 @@ public class PlayerMovement : MonoBehaviour {
         jump = false;
 
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Win")
+        {
+            WINTEXT.gameObject.SetActive(true);
+        }
     }
 }
