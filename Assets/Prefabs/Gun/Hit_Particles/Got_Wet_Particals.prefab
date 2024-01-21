@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 178391246277022950}
   - component: {fileID: 1027230713129287536}
   - component: {fileID: -4067191453297894272}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Got_Wet_Particals
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,7 +8,7 @@ public class CameraFollower2D : MonoBehaviour
     public GameObject player;
 
     [SerializeField]
-     float timeOffset;
+     float timeOffset = 3;
 
     [SerializeField]
      Vector2 posOffset;
@@ -59,7 +59,7 @@ public class CameraFollower2D : MonoBehaviour
             );
     }
 
-    void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         //draw a box around our camera boundary
         Gizmos.color = Color.red;

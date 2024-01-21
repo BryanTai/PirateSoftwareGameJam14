@@ -6,11 +6,9 @@ public class PlayerHitPoint : MonoBehaviour
 {
     public int health = 100;
 
-    // Start is called before the first frame update
-    //void Start()
-    //{
-        
-    //}
+    [SerializeField]
+    private GameObject convert;
+
 
     public void TakeDamage(int damage)
     {
@@ -24,8 +22,10 @@ public class PlayerHitPoint : MonoBehaviour
 
     void Die()
     {
-        
         Destroy(gameObject);
+        Instantiate(convert, Vector3.zero, Quaternion.identity);
+        FindObjectOfType<GameManager>().EndGame();
+
     }
 
     // Update is called once per frame
