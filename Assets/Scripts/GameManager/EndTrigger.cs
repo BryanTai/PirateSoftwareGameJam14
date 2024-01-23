@@ -1,20 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class EndTrigger : MonoBehaviour
 {
     public GameManager gameManager;
 
-    public void OnTriggerEnter2D(Collider2D collission)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collission.tag == "Player")
+       if(collision.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
         //FindObjectOfType<GameManager>().CompleteLevel();
-        //gameManager.CompleteLevel();
-        }
+        gameManager.CompleteLevel();
+        }     
     }
-
-
-
 }

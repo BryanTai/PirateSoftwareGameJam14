@@ -8,21 +8,28 @@ public class Bullet : MonoBehaviour
     public int damage = 40;
     public Rigidbody2D rb;
     public GameObject impactEffect;
-    
+
     // Use this for initialization
     void Start()
     {
-        rb.velocity = transform.right * speed;   
+        rb.velocity = transform.right * speed;
     }
 
-    void Update () 
+    void Update()
     {
-        Destroy(gameObject,3f);
+        Destroy(gameObject, 3f);
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Enemy enemy = hitInfo.GetComponent<Enemy>();
+
+        BossHealth boss = hitInfo.GetComponent<BossHealth>();
+        if (boss != null)
+        {
+            boss.TakeDamage(damage);
+        }
+
+        EnemyHealth enemy = hitInfo.GetComponent<EnemyHealth>();
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
@@ -30,7 +37,11 @@ public class Bullet : MonoBehaviour
 
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
-        
     }
 
+   // void OnTriggerEnter2D(Collider2D hitInfo)
+   // {
+        //Instantiate(impactEffect, transform.position, transform.rotation);
+        //Destroy(gameObject);
+   // }
 }
